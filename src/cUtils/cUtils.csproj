@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
+    <PackageId>cUtils</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>dtlins</Authors>
+    <Description>C# Utilities</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright 2017 (c) dtlins.</Copyright>
+    <PackageTags>utilities</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.4\cUtils.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
