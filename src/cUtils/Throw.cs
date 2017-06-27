@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace cUtils
+namespace CUtils
 {
     /// <summary>
-    /// Throws <typeparamref name="TException"/> if condition is met.
+    /// Throws <typeparamref name="TException"/>.
     /// </summary>
     /// <typeparam name="TException"></typeparam>
     public static class Throw<TException> where TException : Exception

@@ -10,10 +10,13 @@
     <Copyright>Copyright 2017 (c) dtlins.</Copyright>
     <PackageTags>utilities</PackageTags>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <RootNamespace>CUtils</RootNamespace>
+    <AssemblyName>CUtils</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.4\cUtils.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
 </Project>
