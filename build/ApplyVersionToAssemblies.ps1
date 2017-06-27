@@ -71,7 +71,7 @@ $NewVersion = $VersionData[0]
 Write-Verbose "Version: $NewVersion"
 
 # Apply the version to the assembly property files (changed to .csproj files for .NET Standard)
-$files = gci $Env:BUILD_SOURCESDIRECTORY -recurse -include "*Properties*","My Project" | 
+$files = gci $Env:BUILD_SOURCESDIRECTORY -recurse  | 
     ?{ $_.PSIsContainer } | 
     foreach { gci -Path $_.FullName -Recurse -include *.csproj } 
 if($files)
