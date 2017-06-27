@@ -1,8 +1,7 @@
-using CUtils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CUnit.Test
+namespace CUtils.Test
 {
     [TestClass]
     public class ThrowTests
@@ -28,7 +27,7 @@ namespace CUnit.Test
 
     sealed class AssertEx
     {
-        public static void DoesNotThrowException<TException>(Action a)where TException : Exception
+        public static void DoesNotThrowException<TException>(Action a) where TException : Exception
         {
             try
             {
