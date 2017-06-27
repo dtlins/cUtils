@@ -70,10 +70,10 @@ switch($VersionData.Count)
 $NewVersion = $VersionData[0]
 Write-Verbose "Version: $NewVersion"
 
-# Apply the version to the assembly property files
+# Apply the version to the assembly property files (changed to .csproj files for .NET Standard)
 $files = gci $Env:BUILD_SOURCESDIRECTORY -recurse -include "*Properties*","My Project" | 
     ?{ $_.PSIsContainer } | 
-    foreach { gci -Path $_.FullName -Recurse -include AssemblyInfo.* }
+    foreach { gci -Path $_.FullName -Recurse -include *.csproj } 
 if($files)
 {
     Write-Verbose "Will apply $NewVersion to $($files.count) files."
