@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CUtils.Test
 {
@@ -7,12 +8,20 @@ namespace CUtils.Test
     public class ThrowTests
     {
         [TestMethod]
-        public void If_True_ThrowsException()
+        public void If_True_ThrowsExceptionWithMessage()
         {
             var condition = true;
             var message = "message";
 
             Assert.ThrowsException<Exception>(() => Throw<Exception>.If(condition, message), message);
+        }
+
+        [TestMethod]
+        public void If_True_ThrowsExceptionNoMessage()
+        {
+            var condition = true;
+
+            Assert.ThrowsException<Exception>(() => Throw<Exception>.If(condition));
         }
 
         [TestMethod]
@@ -25,6 +34,7 @@ namespace CUtils.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     sealed class AssertEx
     {
         public static void DoesNotThrowException<TException>(Action a) where TException : Exception
