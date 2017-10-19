@@ -32,6 +32,20 @@ namespace CUtils.Test
 
             AssertEx.DoesNotThrowException<Exception>(() => Throw<Exception>.If(condition, message));
         }
+
+        [TestMethod]
+        public void WithNoMessage_ThrowsException()
+        {
+            Assert.ThrowsException<Exception>(() => Throw<Exception>.WithNoMessage());
+        }
+
+        [TestMethod]
+        public void WithMessage_ThrowsException()
+        {
+            var message = "message";
+
+            Assert.ThrowsException<Exception>(() => Throw<Exception>.WithMessage(message));
+        }
     }
 
     [ExcludeFromCodeCoverage]
