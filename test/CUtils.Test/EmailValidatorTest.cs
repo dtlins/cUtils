@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CUtils.Test
 {
     [TestClass]
-    public class EmailValidatorTests
+    public class EmailValidatorTest
     {
         [TestMethod]
         public void IsValid_True()
