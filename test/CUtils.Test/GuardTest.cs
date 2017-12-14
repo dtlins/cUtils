@@ -4,7 +4,7 @@ using System;
 namespace CUtils.Test
 {
     [TestClass]
-    public class GuardTests
+    public class GuardTest
     {
         [TestMethod]
         public void Guard_Null_ThrowsArgumentNullException()

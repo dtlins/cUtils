@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace CUtils.Test
 {
     [TestClass]
-    public class ThrowTests
+    public class ThrowTest
     {
         [TestMethod]
         public void If_True_ThrowsExceptionWithMessage()
