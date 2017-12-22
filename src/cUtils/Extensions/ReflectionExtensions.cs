@@ -22,11 +22,11 @@ namespace CUtils.Extensions
         public static IEnumerable<Assembly> LoadAllAssemblies(this AppDomain appDomain, string prefix = null)
         {
             if (string.IsNullOrWhiteSpace(prefix)) prefix = GetAssemblyPrefix();
-            string[] assemblyMatch = new[] { $"{ prefix }*.dll" };
+            prefix = $"{ prefix }*.dll";
 
-            return Directory.EnumerateFiles(appDomain.BaseDirectory, "*.dll", SearchOption.AllDirectories)
-                      .Where(filename => assemblyMatch.Any(pattern => Regex.IsMatch(filename, pattern)))
-                      .Select(Assembly.LoadFrom);
+            return Directory
+                .EnumerateFiles(appDomain.BaseDirectory, prefix, SearchOption.AllDirectories)
+                .Select(Assembly.LoadFrom);
 
             string GetAssemblyPrefix()
             {
